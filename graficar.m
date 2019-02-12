@@ -10,7 +10,7 @@ x = [-r:in:r];
 opc = true;
 while(opc)
     fx = inline(input('Ingrese función: ', "s"));
-    p = plot(x, fx(x))
+    plot(x, fx(x))
     menor = false;
     mayor = false;
     if(fx(x(1)) <= 0)
@@ -32,8 +32,10 @@ while(opc)
             cont ++;
         endif
     endfor
-    if(cont > 0)
+    if(cont > 1)
         printf('\nEn el rango hay %d raices.\n', cont)
+    else
+        printf('\nf(x) no pasa por y=0\n')
     endif
     if(input('Otro? [si] ',"s") != "si")
         opc = false;
