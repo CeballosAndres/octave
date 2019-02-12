@@ -38,7 +38,6 @@ while(opc)
     if(input('Otro? [si] ',"s") != "si")
         opc = false;
         print('Bye')
-        print("Falta mejorar :)")
     endif
 endwhile
 close()
