@@ -1,8 +1,11 @@
-f = inline(input('Ingrese la función: ','s'));
+fun = input('Ingrese la función: ','s');
+f = inline(fun);
 a = input('Ingrese valor para a: ');
 b = input('Ingrese valor para b: ');
 tolerancia = input('Ingrese la tolerancia permitida: ');
 seguir = true;
+la = a;
+lb = b;
 x = 0;
 y = 0;
 
@@ -19,7 +22,8 @@ if (f(a) * f(b) <0)
             a = x;
         endif
     endwhile
-    printf('La raiz es x=%d  f(x)=%d \n\n',x,y) 
+    printf('\nFunción f(x) = %s  , [%d, %d] \n',fun,la,lb) 
+    printf('Raiz: f(%d) = %d   -> entre [%d, %d]\n\n',x,y,a,b)
 else
-    printf('f(x) no cruza x en el intervalo [%d -%d]\n',a,b)
+    printf('La función %s no cruza x en el intervalo [%d,%d]\n',fun,a,b)
 endif
