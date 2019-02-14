@@ -19,7 +19,7 @@ if (f(a) * f(b) <0)
             a = x;
         endif
     endwhile
+    printf('La raiz es x=%d  f(x)=%d \n\n',x,y) 
 else
-    printf('La función no cruza el eje x en el intervalo dado.\n')
+    printf('f(x) no cruza x en el intervalo [%d -%d]\n',a,b)
 endif
-printf('La raiz es x=%d  f(x)=%d \n',x,y) 
