@@ -8,13 +8,17 @@ lb = b;
 x = 0;
 y = 0;
 n = 0;
+err = 1;
+
+% 2*x^3-(2.5)*x-5 
 
 if (f(a) * f(b) < 0)
     fprintf('\t #  \t LI \t PM \t LS \t Ɛ\n')
-    while((err = (b-a)/2) >= tolerancia)
+    while(err > tolerancia)
         n++;
-        x = ((a + b)/2);
+        x = a-((f(a)*(b-a))/(f(b)-f(a)));
         y = f(x);
+        err = abs(y);
         fprintf('\t %d  \t %d \t %d \t %d \t %d\n',n, a, x , b, err)
         if (f(a) * y < 0)
             b = x;
@@ -27,3 +31,4 @@ if (f(a) * f(b) < 0)
 else
     printf('La función %s no cruza x en el intervalo [%d,%d]\n',fun,a,b)
 endif
+
