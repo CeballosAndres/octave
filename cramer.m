@@ -1,0 +1,24 @@
+a11 = input('');
+a12= input('');
+a13 = input('');
+c1 = input('');
+a21 = input('');
+a22 = input('');
+a23 = input('');
+c2 = input('');
+a31 = input('');
+a32 = input('');
+a33 = input('');
+c3 = input('');
+A = [a11,a12,a12;a21,a22,a23;a31,a32,a33]
+Ax = [c1,a12,a12;c2,a22,a23;c3,a32,a33]
+Ay = [a11,c1,a12;a21,c2,a23;a31,c3,a33]
+Az = [a11,a12,c1;a21,a22,c2;a31,a32,c3]
+x = det(Ax)/det(A)
+y = det(Ay)/det(A)
+z = det(Az)/det(A)
+
+B = inv(A)
+c = [c1,c2,c3]
+c = c'
+x = B * c
