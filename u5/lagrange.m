@@ -1,4 +1,4 @@
-x = load('tiemposyvelocidades.txt');
+x = load('clase');
 x
 
 function[La1]=L1(Xa, X0, X1, Y0, Y1)
@@ -14,7 +14,7 @@ function[La2]=L2(Xa,X0,X1,X2,Y0,Y1,Y2)
     La2 = L0*Y0+L1*Y1+L2*Y2;
 endfunction      
 
-o1 = L1(16,x(3,1),x(4,1),x(3,2),x(4,2));
+o1 = L1(1.5,x(3,1),x(4,1),x(3,2),x(4,2));
 o1
-o2 = L2(16,x(3,1),x(4,1),x(5,1),x(3,2),x(4,2),x(5,2));
+o2 = L2(1.5,x(3,1),x(4,1),x(5,1),x(3,2),x(4,2),x(5,2));
 o2
