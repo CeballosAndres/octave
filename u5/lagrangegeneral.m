@@ -3,8 +3,7 @@
 %% Selene Elizabeth Arteaga Álvarez
 %% Alejandra Centeno Alcaraz
 %% José Andrés Ceballos Vadillo
-  txt = input('Archivo: ',"s");
-  x = load(txt);
+  x = load('datos.txt');
   orden=input('Ingrese el orden:(con numero): ');
   orden
   A = zeros(orden+1,orden+1);
