@@ -1,5 +1,5 @@
 disp('El siguiente programa realiza una interpolación mediante el metodo Newton,');
-disp('en un segundo momento realiza un ajuste lineal');
+disp('en un segundo momento realiza un ajuste polinomial');
 x = load(input('Ingrese el nombre del archivo [datos.txt]: ',"s"));
 %x = load('datos.txt');
 disp("\nLos valores del archivo son:  ");
@@ -175,12 +175,12 @@ xlabel("Variable independiente t");
 ylabel("Variable dependiente y(t)");
 %% Valores reales
 plot(x(1:length(x),1),x(1:length(x),2),'xr');
-%% Ajuste lineal
-xvec = [x(1,1):1:x(length(x),1)];
+%% Ajuste polinomial
+xvec = [x(1,1):0.1:x(length(x),1)];
 yvec = resuelvePolinomio(coeficientes, xvec);
 plot(xvec,yvec,'-b');
 %% Interpolacion Newton
 plot(interpolar,newton,'og');
-legend ("Valores introducidos","Ajuste lineal","Interpolacion Newton");
+legend ("Valores introducidos","Ajuste polinomiapolinomial","Interpolacion Newton");
 hold off;
 disp("Fin del programa");
