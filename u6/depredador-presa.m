@@ -125,5 +125,8 @@ plot(file(:,1),'xr')
 plot(t0,y0,'-b');
 plot(file(:,2),'xb')
 legend("Ajuste Presa","Datos Presa","Ajuste Depredador","Datos Depredador");
+title("Presa-Depredador");
+ylabel("Poblacion");
+xlabel("Tiempo");
 hold off
 
