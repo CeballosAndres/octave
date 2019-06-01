@@ -81,10 +81,14 @@ fprintf('Sen han calculado los coeficientes a1:%d, a2:%d, b1%d, b2:%d\n\n',a1,a2
 f1=inline('a1*x-a2*x*y');
 f2=inline('-b1*y+b2*x*y');
 disp('Se aplica el metodo Runge-Kutta para la resolución');
-disp('del siguiente sistema de ecuaciones diferenciales');
-disp("x'(t) = a1x(t) - a2x(t)y(t)");
-disp("y'(t) = -b1y(t) + b2x(t)y(t)\n");
-
+disp('del siguiente sistema de ecuaciones diferenciales\n');
+disp(" | x'(t) = a1x(t) - a2x(t)y(t)");
+disp('-');
+disp(" | y'(t) = -b1y(t) + b2x(t)y(t)\n");
+disp("Se sustituye:");
+fprintf(" | x'(t) = %dx(t) - %dx(t)y(t)\n",a1,a2);
+disp('-');
+fprintf(" | y'(t) = -%dy(t) + %dx(t)y(t)\n\n",b1,b2);
 %% Se inicia la resolución del sistema mendiante Runge-Kutta orden 4
 t0=0;
 x0=file(1,1);
