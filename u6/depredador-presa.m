@@ -2,7 +2,7 @@ clear
 close all
 clc
 % Cargar los datos
-file = load('datos.txt')
+file = load('datos.txt');
 tiempo = 0:1:length(file)-1;
 disp("\nLos datos de entrada son:  ");
 fprintf('  Tiempo  ');
@@ -80,6 +80,10 @@ fprintf('Sen han calculado los coeficientes a1:%d, a2:%d, b1%d, b2:%d\n',a1,a2,b
 %% A partir de los coeficientes se determinan las funciones
 f1=inline('a1*x-a2*x*y');
 f2=inline('-b1*y+b2*x*y');
+disp('Se aplica el metodo Runge-Kutta para la resolución');
+disp('del siguiente sistema de ecuaciones diferenciales');
+disp("x'(t)=a1*x-a2*x*y");
+disp("y'(t)=-b1*y+b2*x*y");
 %% Se inicia la resolución del sistema mendiante Runge-Kutta orden 4
 t0=0;
 x0=file(1,1);
@@ -106,18 +110,6 @@ while t0 < Tap
     y0(n+1)=y0(n)+phi2.*DeltaT;
     n=n+1;
 end
-%% Desplegar los datos en pantalla
-tiempo = 0:1:length(file)-1;
-disp("\nLos datos de entrada son:  ");
-fprintf('  Tiempo  ');
-fprintf('|%3.0f  ',tiempo(1,:));
-fprintf('|\n');
-fprintf('  Presa   ');
-fprintf('|%5.1f',file(:,1));
-fprintf('|\n');
-fprintf('Depredador');
-fprintf('|%5.1f',file(:,2));
-fprintf('|\n\n');
 
 %% Se realiza la graficación
 hold on
