@@ -99,8 +99,7 @@ x0(1)=x0;
 y0(1)=y0;
 t0(1)=t0;
 n=1;
-fprintf('Con los valores x(0)=%d, y(0)=%d y un h=%d \n',x0,y0,DeltaT);
-fprintf('se procede a resolver el sistema con Runge-Kutta\n');
+fprintf('Con los valores iniciales x(0) = %d, y(0) = %d y un h = %d se procede a resolver el sistema con Runge-Kutta o4\n\n',x0,y0,DeltaT);
 while t0 < Tap
     t0(n+1)=t0(n) + DeltaT;
     K11=f1(a1,a2,x0(n),y0(n),t0(n));
