@@ -76,14 +76,15 @@ a1=log(file(limdepredador(2)+1,1)/file(limdepredador(2),1));
 b1=-log(file(limpresa(2),2)/file(limpresa(2)-1,2));
 a2=a1/prodepredador;
 b2=b1/propresa;
-fprintf('Sen han calculado los coeficientes a1:%d, a2:%d, b1%d, b2:%d\n',a1,a2,b1,b2);
+fprintf('Sen han calculado los coeficientes a1:%d, a2:%d, b1%d, b2:%d\n\n',a1,a2,b1,b2);
 %% A partir de los coeficientes se determinan las funciones
 f1=inline('a1*x-a2*x*y');
 f2=inline('-b1*y+b2*x*y');
 disp('Se aplica el metodo Runge-Kutta para la resolución');
 disp('del siguiente sistema de ecuaciones diferenciales');
-disp("x'(t)=a1*x-a2*x*y");
-disp("y'(t)=-b1*y+b2*x*y");
+disp("x'(t) = a1x(t) - a2x(t)y(t)");
+disp("y'(t) = -b1y(t) + b2x(t)y(t)\n");
+
 %% Se inicia la resolución del sistema mendiante Runge-Kutta orden 4
 t0=0;
 x0=file(1,1);
@@ -94,6 +95,8 @@ x0(1)=x0;
 y0(1)=y0;
 t0(1)=t0;
 n=1;
+fprintf('Con los valores x(0)=%d, y(0)=%d y un h=%d \n',x0,y0,DeltaT);
+fprintf('se procede a resolver el sistema con Runge-Kutta\n');
 while t0 < Tap
     t0(n+1)=t0(n) + DeltaT;
     K11=f1(a1,a2,x0(n),y0(n),t0(n));
@@ -112,6 +115,7 @@ while t0 < Tap
 end
 
 %% Se realiza la graficación
+disp('Se inicia graficación');
 hold on
 plot(t0,x0,'-r');
 plot(file(:,1),'xr')
