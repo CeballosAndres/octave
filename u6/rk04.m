@@ -18,10 +18,10 @@ y0(1)=y0
 n=1
 while x0 < Xap
     x0(n+1)=x0(n) + DeltaX
-    K01=f(y0(n),x0(n));
-    K02=f(y0(n)+0.5.*K01.*DeltaX, x0(n)+0.5.*DeltaX);
-    K03=f(y0(n)+0.5.*K02.*DeltaX, x0(n)+0.5.*DeltaX);
-    K04=f(y0(n)+K03.*DeltaX, x0(n)+DeltaX);
+    K01=f(x0(n),y0(n));
+    K02=f(x0(n)+0.5.*DeltaX, y0(n)+0.5.*K01*DeltaX);
+    K03=f(x0(n)+0.5.*DeltaX, y0(n)+0.5.*K02*DeltaX);
+    K04=f(x0(n)+DeltaX, y0(n)+K03*DeltaX);
     phi=(1/6)*(K01+2.*K02+2.*K03+K04);
     y0(n+1)=y0(n)+phi.*DeltaX
     n=n+1
